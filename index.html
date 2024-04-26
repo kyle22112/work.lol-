@@ -35,7 +35,7 @@
       transition: all 0.3s ease; /* Add transition for smooth animation */
     }
     .list {
-      display: none;
+      display: none; /* Hide the menu initially */
       position: fixed;
       top: 50px;
       right: 30px;
@@ -44,7 +44,7 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       padding: 10px;
       z-index: 998;
-      animation: fadeIn 0.3s ease; /* Add fade-in animation */
+      animation: fadeInOut 0.3s ease; /* Add fade-in-out animation */
     }
     ul {
       list-style: none;
@@ -57,8 +57,8 @@
       color: black;
     }
 
-    /* Keyframes for fade-in animation */
-    @keyframes fadeIn {
+    /* Keyframes for fade-in-out animation */
+    @keyframes fadeInOut {
       from {
         opacity: 0;
       }
@@ -88,7 +88,7 @@
 <script>
   function toggleList() {
     var list = document.getElementById("myList");
-    if (list.style.display === "none") {
+    if (list.style.display === "none" || list.style.display === "") { // Check for both "none" and "" (initial state)
       list.style.display = "block";
     } else {
       list.style.display = "none";
