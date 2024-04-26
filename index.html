@@ -19,17 +19,27 @@
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
-    .list-button {
+    .list-icon {
+      position: fixed;
+      top: 20px;
+      right: 20px;
       background-color: #007bff;
       color: #fff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
+      padding: 10px;
+      border-radius: 50%;
       cursor: pointer;
+      z-index: 999;
     }
     .list {
       display: none;
-      padding: 10px 0;
+      position: fixed;
+      top: 50px;
+      right: 30px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      z-index: 998;
     }
     .list-item {
       margin-bottom: 5px;
@@ -40,15 +50,17 @@
 
 <div class="container">
   <h1>Welcome to Our Website</h1>
-  <button class="list-button" onclick="toggleList()">Show List</button>
-  <div class="list" id="myList">
-    <ul>
-      <li class="list-item">Item 1</li>
-      <li class="list-item">Item 2</li>
-      <li class="list-item">Item 3</li>
-      <!-- Add more list items as needed -->
-    </ul>
-  </div>
+</div>
+
+<div class="list-icon" onclick="toggleList()">☰</div>
+
+<div class="list" id="myList">
+  <ul>
+    <li class="list-item"><a href="page1.html">Page 1</a></li>
+    <li class="list-item"><a href="page2.html">Page 2</a></li>
+    <li class="list-item"><a href="page3.html">Page 3</a></li>
+    <!-- Add more list items with links to other HTML files as needed -->
+  </ul>
 </div>
 
 <script>
